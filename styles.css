@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    --white: #fff;
+}
+body{
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--Light-Grayish-Blue);
+    font-size: 13px;
+}
+.card{
+    width: 330px;
+    height: 518px;
+    margin: 75px auto;
+    border-radius: 12px;
+    background-color: var(--white);
+    position: relative;
+}
+.card__picture{
+    width: 100%;
+    height: 200px;
+    background: url(./images/drawers.jpg);
+    background-size: cover;
+    background-position-y: -20px;
+    margin-bottom: 32px; 
+    border-radius: 12px 12px 0 0;
+}
+.card__content__title{
+    color: var(--Very-Dark-Grayish-Blue);
+    margin: 0 30px 12px;
+    font-size: 1.24em;
+    line-height: 24px;
+}
+.card__content__description{
+    color: var(--Desaturated-Dark-Blue);
+    margin: 0 42px 30px 30px;
+    font-size: 1.00em;
+    line-height: 20px;
+}
+.card__content__button{
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 7px 8px;
+    background-color: var(--Light-Grayish-Blue);
+    z-index: 1;
+    transition: 300ms;
+}
+.card__content__button:hover{
+    cursor: pointer;
+    background-color: var(--Desaturated-Dark-Blue);
+}
+.card__content__button:hover path{
+    fill:#fff
+}
+/*--------------------Profile-------------------------*/
+.card__content__profile{
+    margin: 0 30px 30px;
+    display: flex;  
+    opacity: 1;
+}
+.card__content__profile__picture{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.card__content__profile__name{
+    margin: 4px 0 2px 15px;
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+}
+.card__content__profile__date{
+    margin-left: 15px;
+    color: var(--Grayish-Blue);
+}
+
+/*--------------------icon-Shared--------------------*/
+.card__content__share-icons{
+    position: absolute;
+    bottom: 0;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+    display: none;
+    gap: 5px;
+    align-items: center;
+    border-radius: 0 0 12px 12px;
+    
+}
+.card__content__share-icons__share{
+    color: var(--Grayish-Blue);
+    letter-spacing: 4px;
+    margin-right: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.card__content__share-icons__icon{
+    margin: 0 8px;    
+}
+.show{
+    display: flex;
+}
+.rotate{
+    background-color: var(--Desaturated-Dark-Blue);
+    transition: 300ms;
+    transform: scale(1.1) rotate(315deg);
+}
+.rotate path{
+    fill: white;
+}
+.attribution { 
+    font-size: 14px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+/*------------------------Desktop----------------------------*/
+@media (min-width:745px){
+    .card{
+        margin: 270px auto 75px;
+        width: 735px;
+        height: 280px;
+        display: flex;   
+    }
+    .card__picture{
+        background-position-y: unset;
+        height: 100%;
+        border-radius: 12px 0 0 12px;
+    }
+    .card__content{
+        padding: 40px 60px 30px 40px;
+    }
+    .card__content__title{
+        margin: 0 0 20px;
+        font-size: 1.5em;
+        line-height: 26px;
+    }
+    .card__content__description{
+        margin: 0 0 20px;
+    }
+    .card__content__button{
+        right: 50px;
+        bottom: 30px;
+    }
+    .card__content__profile{
+        margin: 0;
+    }
+    .card__content__share-icons{
+        bottom: 80px;
+        right: -60px;
+        border-radius: 8px;
+        width: 250px;
+        height: 56px;
+    }
+    .card__content__share-icons::after{
+        content: "";
+        border: 10px solid;
+        border-color: var(--Very-Dark-Grayish-Blue) transparent transparent;
+        position: absolute;
+        top: 100%;
+        left: 115px;
+    }
+}
